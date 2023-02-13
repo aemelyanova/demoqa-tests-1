@@ -91,10 +91,9 @@ public class AutomationPracticeForm {
         //проверка
         $(".modal-content").shouldBe(visible);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName + " " + lastName)).
-                shouldHave(text(email)).shouldHave(text(gender)).shouldHave(text(numberPhone)).
-                shouldHave(text(dateOfBirth)).shouldHave(text(subjects)).shouldHave(text(hobbies)).shouldHave(text(photo)).
-                shouldHave(text(address)).shouldHave(text(state + " " + city));
+        $(".table-responsive").shouldHave(text(firstName + " " + lastName), text(email), text(gender),
+                text(numberPhone), text(dateOfBirth), text(subjects), text(hobbies), text(photo),
+                text(address), text(state + " " + city));
 
     }
 }
