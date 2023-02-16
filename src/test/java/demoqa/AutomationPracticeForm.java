@@ -25,8 +25,8 @@ public class AutomationPracticeForm {
         String lastName = "Petrov";
         String email = "valerka@gmail.com";
         String numberPhone = "1122334455";
-        String dateOfBirth = "27 January,1995";
-        String dayOfBirth = "27";
+        String dateOfBirth = "30 January,1995";
+        String dayOfBirth = "30";
         String monthOfBirth = "January";
         String yearOfBirth = "1995";
         String gender = "Male";
@@ -39,12 +39,12 @@ public class AutomationPracticeForm {
         String state = "Haryana";
         String city = "Panipat";
 
-
-        // открываем нужный сайт и выполняем проверку по названию заголовка "Practice Form"
+        // открываем нужный сайт и выполняем проверку по названию заголовка "Student Registration Form"
         open("/automation-practice-form");
-        $(".main-header").shouldHave(text("Practice Form"));
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+
 
         // заполняем форму студента: Name (First Name, Last Name) и Email
         $("#firstName").setValue(firstName);
@@ -63,8 +63,7 @@ public class AutomationPracticeForm {
         $(byText(monthOfBirth)).click();
         $(".react-datepicker__year-select").click();
         $(byText(yearOfBirth)).click();
-        $(".react-datepicker__day-names").click();
-        $(byText(dayOfBirth)).click();
+        $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
 
         // выбираем предмет для изучения
         $("#subjectsInput").setValue(subjects).click();
@@ -97,3 +96,4 @@ public class AutomationPracticeForm {
 
     }
 }
+
